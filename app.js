@@ -11,7 +11,7 @@
   // Get a reference to the database service
   var database = firebase.database();
 
-  var school_data = database.ref('abnasiatest-default-rtdb/schools_data')
+  var school_data = database.ref('/schools_data')
   school_data.on('value', (snapshot) => {
       console.log(snapshot.val())
   })
