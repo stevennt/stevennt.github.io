@@ -17,25 +17,22 @@
   })
 
   function lookup() {
-
-
-
       var school_id = document.getElementById('schoolID').value.trim()
       var student_id = document.getElementById('studentID').value.trim()
-
+      var studentFound = false
       console.log(school_id, student_id)
       if (school_id.length > 0 && student_id.length > 0) {
           if (grecaptcha.getResponse().length > 0) {
-              
+
               school_data.orderByChild('school_id').equalTo(school_id).once('value', function (snapshot) {
                   // console.log(snapshot.val())
                   school_records = snapshot.val()
                   students = school_records[school_id]['students']
                   // console.log(school_records)
                   for (i = 0; i < students.length; i++) {
-                      if (students[i]['student_id'] == student_id) {
+                      if (students[i]['student_id'] === student_id) {
                           console.log(students[i])
-
+                          studentFound = true
                           document.getElementById('lf_school_id').innerText = school_records[school_id]['school_id']
                           document.getElementById('lf_school_name').innerText = school_records[school_id]['school_name']
                           document.getElementById('lf_student_id').innerText = students[i]['student_id']
@@ -48,6 +45,15 @@
                           }
 
                       }
+                      //   else {
+                      //       alert('Student ID: ' + student_id + ' not found in this school, contact admin!')
+                      //       document.getElementById('schoolID').value = ""
+                      //       document.getElementById('studentID').value = ""
+                      //       break
+                      //   }
+                  }
+                  if (!studentFound){
+                    alert('Student ID: ' + student_id + ' not found in this school, contact admin!')
                   }
               })
           } else {
