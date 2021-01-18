@@ -12,9 +12,9 @@
   var database = firebase.database();
 
   var school_data = database.ref('/schools_data')
-  school_data.on('value', (snapshot) => {
-      console.log(snapshot.val())
-  })
+  //   school_data.on('value', (snapshot) => {
+  //       console.log(snapshot.val())
+  //   })
 
   function lookup() {
       var school_id = document.getElementById('schoolID').value.trim()
@@ -27,33 +27,36 @@
               school_data.orderByChild('school_id').equalTo(school_id).once('value', function (snapshot) {
                   // console.log(snapshot.val())
                   school_records = snapshot.val()
-                  students = school_records[school_id]['students']
-                  // console.log(school_records)
-                  for (i = 0; i < students.length; i++) {
-                      if (students[i]['student_id'] === student_id) {
-                          console.log(students[i])
-                          studentFound = true
-                          document.getElementById('lf_school_id').innerText = school_records[school_id]['school_id']
-                          document.getElementById('lf_school_name').innerText = school_records[school_id]['school_name']
-                          document.getElementById('lf_student_id').innerText = students[i]['student_id']
-                          document.getElementById('lf_student_name').innerText = students[i]['student_name']
-                          document.getElementById('lf_balance').innerText = students[i]['outstanding_balance']
-                          document.getElementById('lf_balance_date').innerText = school_records[school_id]['balance_date']
+                  if (school_records == null) {
+                      alert('School ID: ' + school_id + ' not found, contact admin!')
+                  } else {
+                      students = school_records[school_id]['students']
+                      // console.log(school_records)
+                      for (i = 0; i < students.length; i++) {
+                          if (students[i]['student_id'] === student_id) {
+                              console.log(students[i])
+                              studentFound = true
+                              document.getElementById('lf_school_id').innerText = school_records[school_id]['school_id']
+                              document.getElementById('lf_school_name').innerText = school_records[school_id]['school_name']
+                              document.getElementById('lf_student_id').innerText = students[i]['student_id']
+                              document.getElementById('lf_student_name').innerText = students[i]['student_name']
+                              document.getElementById('lf_balance').innerText = students[i]['outstanding_balance']
+                              document.getElementById('lf_balance_date').innerText = school_records[school_id]['balance_date']
 
-                          if (document.getElementById('balancediv').style.display = "none") {
-                              document.getElementById('balancediv').style.display = "block"
+                              if (document.getElementById('balancediv').style.display = "none") {
+                                  document.getElementById('balancediv').style.display = "block"
+                              }
                           }
-
+                          //   else {
+                          //       alert('Student ID: ' + student_id + ' not found in this school, contact admin!')
+                          //       document.getElementById('schoolID').value = ""
+                          //       document.getElementById('studentID').value = ""
+                          //       break
+                          //   }
                       }
-                      //   else {
-                      //       alert('Student ID: ' + student_id + ' not found in this school, contact admin!')
-                      //       document.getElementById('schoolID').value = ""
-                      //       document.getElementById('studentID').value = ""
-                      //       break
-                      //   }
-                  }
-                  if (!studentFound){
-                    alert('Student ID: ' + student_id + ' not found in this school, contact admin!')
+                      if (!studentFound) {
+                          alert('Student ID: ' + student_id + ' not found in this school, contact admin!')
+                      }
                   }
               })
           } else {
