@@ -28,7 +28,7 @@
                   // console.log(snapshot.val())
                   school_records = snapshot.val()
                   if (school_records == null) {
-                      alert('School ID: ' + school_id + ' not found, contact admin!')
+                      alert('Mã trường : ' + school_id + ' không có, mời liên hệ với trường để cập nhật!')
                   } else {
                       students = school_records[school_id]['students']
                       // console.log(school_records)
@@ -55,15 +55,15 @@
                           //   }
                       }
                       if (!studentFound) {
-                          alert('Student ID: ' + student_id + ' not found in this school, contact admin!')
+                          alert('Mã sinh viên : ' + student_id + ' không tìm thấy trong trường, mời liên hệ với trường để cập nhật!')
                       }
                   }
               })
           } else {
-              alert('Check the CAPTCHA!')
+              alert('Kiểm tra lại aptchaCheck the CAPTCHA!')
           }
       } else {
-          alert('Both fields are mandatory!')
+          alert('Cả hai trường đều cần điền!')
       }
   }
 
