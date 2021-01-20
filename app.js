@@ -61,7 +61,7 @@
               })
           //} else {
           //    alert('Kiểm tra lại aptchaCheck the CAPTCHA!')
-          }
+          //}
       } else {
           alert('Cả hai trường đều cần điền!')
       }
