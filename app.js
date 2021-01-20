@@ -24,8 +24,8 @@
       if (school_id.length > 0 && student_id.length > 0) {
           //if (grecaptcha.getResponse().length > 0) {
 
-              //school_data.orderByChild('school_id').equalTo(school_id).once('value', function (snapshot) {
-              school_data.orderByChild('school_id').toLowerCase().equalTo(school_id).once('value', function (snapshot) {
+              school_data.orderByChild('school_id').equalTo(school_id).once('value', function (snapshot) {
+              //school_data.orderByChild('school_id').toLowerCase().equalTo(school_id.toLowerCase()).once('value', function (snapshot) {
                   // console.log(snapshot.val())
                   school_records = snapshot.val()
                   if (school_records == null) {
@@ -34,8 +34,8 @@
                       students = school_records[school_id]['students']
                       // console.log(school_records)
                       for (i = 0; i < students.length; i++) {
-                          //if (students[i]['student_id'] === student_id) {
-                          if (toLowerCase(students[i]['student_id']) === toLowerCase(student_id)) {
+                          if (students[i]['student_id'] === student_id) {
+                          //if (students[i]['student_id'].value.toUpperCase() === student_id.value.toUpperCase() {
                             
                               console.log(students[i])
                               studentFound = true
