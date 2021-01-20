@@ -22,7 +22,7 @@
       var studentFound = false
       console.log(school_id, student_id)
       if (school_id.length > 0 && student_id.length > 0) {
-          if (grecaptcha.getResponse().length > 0) {
+          //if (grecaptcha.getResponse().length > 0) {
 
               school_data.orderByChild('school_id').equalTo(school_id).once('value', function (snapshot) {
                   // console.log(snapshot.val())
@@ -59,8 +59,8 @@
                       }
                   }
               })
-          } else {
-              alert('Kiểm tra lại aptchaCheck the CAPTCHA!')
+          //} else {
+          //    alert('Kiểm tra lại aptchaCheck the CAPTCHA!')
           }
       } else {
           alert('Cả hai trường đều cần điền!')
