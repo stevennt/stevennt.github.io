@@ -17,7 +17,8 @@
   //   })
 
   function lookup() {
-      var school_id = document.getElementById('schoolID').value.trim()
+      //var school_id = document.getElementById('schoolID').value.trim()
+      var school_id = document.getElementById('schoolID').value.trim().toUpperCase()
       var student_id = document.getElementById('studentID').value.trim()
       var studentFound = false
       console.log(school_id, student_id)
