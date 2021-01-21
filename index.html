@@ -35,6 +35,7 @@
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
     </script>
+
 </head>
 
 <body>
@@ -62,10 +63,20 @@
                     <div class="g-recaptcha" data-sitekey="6LdvzS0aAAAAAGhOoWiQVayJ7ZMRloN_CbAmooup"></div>
                     -->
                     <br />
-                    <button type="button" class="btn btn-dark text-danger btn-lg" onclick="lookup()">TRA CỨU</button>
+                    <button id="lookupButton" type="button" class="btn btn-dark text-danger btn-lg" onclick="lookup()">TRA CỨU</button>
                 </form>
             </div>
         </div>
+        <script>
+            var input_studentid = document.getElementById("studentID");
+            input_studentid.addEventListener("keyup", function(event) {
+              if (event.keyCode === 13) {
+               //event.preventDefault();
+               document.getElementById("lookupButton").click();
+               //lookup();
+              }
+            });
+        </script>
         <br />
         <br />
         <div id="balancediv" style="display:none;">
