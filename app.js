@@ -43,8 +43,10 @@
                               document.getElementById('lf_school_name').innerText = school_records[school_id]['school_name']
                               document.getElementById('lf_student_id').innerText = students[i]['student_id']
                               document.getElementById('lf_student_name').innerText = students[i]['student_name']
-                              document.getElementById('lf_balance').innerText = students[i]['outstanding_balance']
-                              document.getElementById('lf_balance_date').innerText = school_records[school_id]['balance_date']
+                              //document.getElementById('lf_balance').innerText = students[i]['outstanding_balance']
+                              //document.getElementById('lf_balance').innerText = students[i]['outstanding_balance'].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+                              document.getElementById('lf_balance').innerText = students[i]['outstanding_balance'].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+                              document.getElementById('lf_balance_date').innerText = school_records[school_id]['balance_date']                            
 
                               if (document.getElementById('balancediv').style.display = "none") {
                                   document.getElementById('balancediv').style.display = "block"
