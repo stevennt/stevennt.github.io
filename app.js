@@ -35,7 +35,8 @@
                       students = school_records[school_id]['students']
                       // console.log(school_records)
                       for (i = 0; i < students.length; i++) {
-                          if (students[i]['student_id'] === student_id) {
+                          //if (students[i]['student_id'] === student_id) {
+                          if (students[i]['student_id'].toLowerCase() === student_id.toLowerCase()) {    
                           //if (students[i]['student_id'].value.toUpperCase() === student_id.value.toUpperCase() {
                             
                               console.log(students[i])
