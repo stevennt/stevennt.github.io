@@ -51,7 +51,7 @@ permalink: /huongdan/
                 <h1 class="align-middle" style="color: teal;">HỌC PHÍ</h1>
             </div>
             <div class="col-md-9 col p-3">
-                <iframe id="vp1oVzG3" title="Video Player" width="864" height="486" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1611545456&f=oVzG3FTTYfpRblZFqxMoJg&d=0&m=p&r=360p+480p+720p&volume=100&start_res=720p&i=m&ct=&cu=&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=" allowfullscreen></iframe>
+                <iframe id="vp1oVzG3" title="Video Player" width="864" height="486" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1611577367&f=oVzG3FTTYfpRblZFqxMoJg&d=0&m=p&r=360p+480p+720p&volume=100&start_res=720p&i=m&ct=&cu=&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=autostart/loop" allowfullscreen></iframe>
             </div>
         </div>
 
