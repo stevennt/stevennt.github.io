@@ -48,7 +48,9 @@
                               //document.getElementById('lf_balance').innerText = students[i]['outstanding_balance']
                               //document.getElementById('lf_balance').innerText = students[i]['outstanding_balance'].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
                               document.getElementById('lf_balance').innerText = students[i]['outstanding_balance'].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+                              document.getElementById('lf_narration').innerText = students[i]['narration']
                               document.getElementById('lf_balance_date').innerText = school_records[school_id]['balance_date']                            
+                        
 
                               if (document.getElementById('balancediv').style.display = "none") {
                                   document.getElementById('balancediv').style.display = "block"
